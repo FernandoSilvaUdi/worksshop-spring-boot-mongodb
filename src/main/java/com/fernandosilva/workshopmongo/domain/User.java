@@ -2,9 +2,14 @@ package com.fernandosilva.workshopmongo.domain;
 
 import java.io.Serializable;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection="user") // se o nome da classe for a mesma do banco(com a letra minuscula) não precisa colocar o collection
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@Id
 	private String id;
 	private String name;
 	private String email;
